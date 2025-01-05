@@ -58,10 +58,12 @@ const App = () => (
                 path="/"
                 element={
                   <ProtectedRoute>
-                    <AppSidebar />
-                    <div className="flex-1">
-                      <Index />
-                    </div>
+                    <>
+                      <AppSidebar />
+                      <div className="flex-1">
+                        <Index />
+                      </div>
+                    </>
                   </ProtectedRoute>
                 }
               />
