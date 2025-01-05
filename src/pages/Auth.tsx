@@ -46,6 +46,12 @@ const AuthPage = () => {
         navigate("/");
       }
     });
+
+    // Check if there's an anonymous user in localStorage
+    const anonymousUser = localStorage.getItem('anonymousUser');
+    if (anonymousUser) {
+      navigate('/');
+    }
   }, [navigate]);
 
   const onAnonymousSubmit = async (values: z.infer<typeof anonymousFormSchema>) => {
