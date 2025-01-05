@@ -36,7 +36,9 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
     return <div>Loading...</div>;
   }
 
-  if (!session) {
+  // Allow access if user is authenticated or has anonymous access
+  const anonymousUser = localStorage.getItem('anonymousUser');
+  if (!session && !anonymousUser) {
     return <Navigate to="/auth" />;
   }
 
